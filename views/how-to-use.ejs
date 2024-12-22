@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Use - <%= product.name %></title>
+    <link rel="shortcut icon" href="../public/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include('partials/header') %>
+
+    <main>
+        <div class="how-to-use">
+            <div class="product-header">
+                <img src="<%= product.image %>" alt="<%= product.name %>" class="product-image">
+                <div class="product-info">
+                    <h1><%= product.name %></h1>
+                    <p class="description"><%= product.description %></p>
+                </div>
+            </div>
+
+            <div class="instructions-sections">
+                <% product.instructions.forEach(function(section) { %>
+                    <section class="instruction-section">
+                        <h2><%= section.title %></h2>
+                        <ul>
+                            <% section.steps.forEach(function(step) { %>
+                                <li><%= step %></li>
+                            <% }); %>
+                        </ul>
+                    </section>
+                <% }); %>
+            </div>
+
+            <div class="back-to-products">
+                <a href="/products" class="cta-button">Back to Products</a>
+            </div>
+        </div>
+    </main>
+
+    <%- include('partials/footer') %>
+</body>
+</html> 

@@ -1,0 +1,12 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "name": "Jacket",
+            "price": 1,
+            "description": "A super comfortable cotton t-shirt",
+            "button_id": "CM2FFV9KYYA6J",
+            "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcQa6XnlwVo3WXXhnouqjYGM_XTsEGqVKPkapr6zWYhp6uZvbtyPDmT8nImJrmfoiFLvcpVROUIkxZe0enrBT8Hl08Wy7i8DPhh3XfWc2SrcruNpPOujF8T-2qHRnG1YjZW_n1vJY5koj0Q&usqp=CAc"
+        }
+    ]
+} 

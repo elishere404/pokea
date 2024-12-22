@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Pokéa</title>
+    <link rel="shortcut icon" href="../public/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://www.paypal.com/sdk/js?client-id=<%= paypalClientId %>&components=hosted-buttons&disable-funding=venmo&currency=EUR"></script>
+</head>
+<body>
+    <%- include('partials/header') %>
+
+    <main>
+        <h1>Our Products</h1>
+        <div class="products-grid">
+            <% products.forEach(function(product) { %>
+                <div class="product-card">
+                    <div id="paypal-container-<%= product.button_id %>"></div>
+                    <script>
+                        paypal.HostedButtons({
+                            hostedButtonId: "<%= product.button_id %>",
+                            currency: "<%= currency %>"
+                        }).render("#paypal-container-<%= product.button_id %>").catch(err => {
+                            console.error('PayPal button failed to load:', err);
+                            document.getElementById("paypal-container-<%= product.button_id %>").innerHTML = 'Payment option temporarily unavailable';
+                        });
+                    </script>
+                    <p class="note" style="color: red;">note: once bought, we will not be able to <strong>give you a refund</strong></p>
+                </div>
+            <% }); %>
+        </div>
+    </main>
+
+    <%- include('partials/footer') %>
+</body>
+</html> 
