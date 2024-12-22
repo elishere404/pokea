@@ -1,6 +1,9 @@
 const express = require('express');
 const path = require('path');
-require('dotenv').config();
+
+if (process.env.NODE_ENV !== 'production') {
+    require('dotenv').config();
+}
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -22,8 +25,9 @@ function getCurrencySymbol(currencyCode) {
     return currencySymbols[currencyCode] || currencyCode;
 }
 
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
 const productsData = require('./data/products.json');
 
@@ -36,8 +40,8 @@ app.get('/', (req, res) => {
 app.get('/products', (req, res) => {
     res.render('products', { 
         products: productsData.products,
-        paypalClientId: process.env.PAYPAL_CLIENT_ID,
-        currency: process.env.CURRENCY
+        paypalClientId: process.env.PAYPAL_CLIENT_ID || '',
+        currency: process.env.CURRENCY || 'EUR'
     });
 });
 
@@ -46,7 +50,7 @@ app.get('/about', (req, res) => {
 });
 
 app.use((req, res) => {
-    res.status(404).render('404');
+    res.status(200).send('OK');
 });
 
 app.listen(port, () => {
