@@ -50,7 +50,7 @@ app.get('/about', (req, res) => {
 });
 
 app.use((req, res) => {
-    res.status(200).send('OK');
+    res.status(200).send(':(, something bad happened ');
 });
 
 app.listen(port, () => {
