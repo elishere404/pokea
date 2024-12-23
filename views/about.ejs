@@ -3,54 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About - Pokéa</title>
-    <link rel="shortcut icon" href="../public/logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="/css/style.css">
-<style>
-.maybe-text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) rotate(-15deg);
-    color: #ff0000;
-    font-size: 4rem;
-    font-weight: bold;
-    text-shadow: -1px -1px 0 #fff,  
-                  1px -1px 0 #fff,
-                 -1px  1px 0 #fff,
-                  1px  1px 0 #fff;
-    z-index: 1;
-    opacity: 0.8;
-    pointer-events: none;
-}
- </style>
+    <title>About - Pokéa</title>   
+     <link rel="shortcut icon" href="../public/images/favicon.ico" type="image/x-icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-light">
     <%- include('partials/header') %>
 
-    <main>
-        <div class="about-container">
-            <h1>About Pokéa</h1>
-            <div class="about-content">
-                <section class="about-section">
-                    <h2>Our Story</h2>
-                    <p>Pokéa was founded by two people - Poké and Elis. Poké is the guy who makes the products and Elis, is me and i made this site. We both are into hacking and decided to sell hacking products to the public, which are legal and safe to use.</p>
-                </section>
-                <section class="about-section">
-                    <h2>Support us </h2>
-                    <p>If you like our products, please support us by buying our products. We will appreciate it. This is our paypal profile: <a href="https://paypal.me/pokea7">https://paypal.me/pokea7</a></p>
-                </section>
+    <main class="container py-5">
+        <h1 class="text-center mb-4">About Pokéa</h1>
+        <div class="row g-4">
+            <div class="col-md-12">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="card-title text-primary">Our Story</h2>
+                        <p class="card-text">Pokéa was founded by two people - Poké and Elis. Poké is the guy who makes the products and Elis, is me and i made this site. We both are into hacking and decided to sell hacking products to the public, which are legal and safe to use.</p>
+                    </div>
+                </div>
+            </div>
 
+            <div class="col-md-12">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-body">
+                        <h2 class="card-title text-primary">Support us</h2>
+                        <p class="card-text">If you like our products, please support us by buying our products. We will appreciate it. This is our paypal profile: <a href="https://paypal.me/pokea7">https://paypal.me/pokea7</a></p>
+                    </div>
+                </div>
+            </div>
 
-                <section class="about-section">
-                    <h2>Contact</h2>
-                    <p>For any inquiries, please contact us at:</p>
-                    <p class="contact-info">Email: support@pokea.net</p>
-                </section>
+            <div class="col-md-12">
+                <div class="card shadow-sm position-relative">
+                    <div class="card-body">
+                        <h2 class="card-title text-primary">Contact</h2>
+                        <p class="card-text">For any inquiries, please contact us at:</p>
+                        <p class="text-primary fw-bold">Email: support@pokea.net</p>
+                        <div class="position-absolute top-50 start-50 translate-middle rotate-n15 text-danger display-4 fw-bold" style="text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff; opacity: 0.8;">
+                            Maybe...
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
 
     <%- include('partials/footer') %>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html> 
